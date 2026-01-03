@@ -28,6 +28,6 @@ class Solution {
 }
 
 /*
- * Common Mistake:
+ * Mistake:
  * - in the base case only checking when start == end
  */

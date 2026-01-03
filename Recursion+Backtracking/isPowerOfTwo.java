@@ -21,6 +21,6 @@ class Solution {
 }
 
 /*
- * Common Mistake:
+ * Mistake:
  * - Did not handle the edge case when n == 0, which caused a runtime error.
  */

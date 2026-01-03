@@ -13,6 +13,6 @@ class Solution {
     }
 }
 /*
- * Common Mistake:
+ * Mistake:
  * - In the base condition returned 1 instead of n - causing the wrong answer
  */
