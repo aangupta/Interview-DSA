@@ -23,9 +23,39 @@ Time Complexity: O(n)
 Space Complexity: O(1)
 */
 
-/* 
-* Solution -1 (PrefixSum + HashMap)
-*/
+/* Sliding Window Approach */
+class Solution {
+
+    private int atMost(int[] nums, int goal) {
+        if (goal < 0)
+            return 0;
+
+        int left = 0, right = 0;
+        int sum = 0;
+        int count = 0;
+
+        while (right < nums.length) {
+            sum += nums[right];
+
+            while (sum > goal) {
+                sum -= nums[left];
+                left++;
+            }
+
+            count += right - left + 1;
+            right++;
+        }
+        return count;
+    }
+
+    public int numSubarraysWithSum(int[] nums, int goal) {
+        return atMost(nums, goal) - atMost(nums, goal - 1);
+    }
+}
+
+/*
+ * Solution -2 (PrefixSum + HashMap)
+ */
 class Solution {
 
     public int numSubarraysWithSum(int[] nums, int goal) {
@@ -49,3 +79,18 @@ class Solution {
         return count;
     }
 }
+
+/*
+ * Notes
+ * Counting subarrays with exact sum ≠ sliding window directly when zeros exist
+ * Use prefix sum or atMost(goal) − atMost(goal−1)
+ * 
+ * Sliding window works when:
+ * expanding window monotonically increases sum
+ * shrinking window monotonically decreases sum
+ * and only one valid window per right pointer
+ * Here:
+ * zeros allow multiple valid left positions
+ * multiple subarrays can end at same right
+ * So: Direct sliding window → undercounts
+ */
