@@ -6,8 +6,6 @@ A good array is an array where the number of different integers in that array is
 For example, [1,2,3,1,2] has 3 different integers: 1, 2, and 3.
 A subarray is a contiguous part of an array.
 
- 
-
 Example 1:
 
 Input: nums = [1,2,1,2,3], k = 2
