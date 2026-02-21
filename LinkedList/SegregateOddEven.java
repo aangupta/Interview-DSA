@@ -11,7 +11,7 @@ You must solve the problem in O(1) extra space complexity and O(n) time complexi
 Input: head = [1,2,3,4,5]
 Output: [1,3,5,2,4]
 
- */
+*/
 //Approach 1: TC - O(n) SC O(n)
 class Solution {
     public ListNode oddEvenList(ListNode head) {
