@@ -14,7 +14,7 @@ Explanation: There is a cycle in the linked list, where the tail connects to the
 */
 
 //Approach 1: Fast and Slow Pointer TC - O(n) Sc - O(1)
-public class Solution {
+public class DetectCycle {
 
     public boolean hasCycle(ListNode head) {
         ListNode fast = head;
