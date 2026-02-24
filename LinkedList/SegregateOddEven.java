@@ -51,10 +51,10 @@ class Solution {
         ListNode evenHead = even;
 
         while (even != null && even.next != null) {
-            odd.next = even.next;
+            odd.next = even.next; // connect odd to next odd
             odd = odd.next;
 
-            even.next = odd.next;
+            even.next = odd.next; // connect even to next even
             even = even.next;
         }
 
