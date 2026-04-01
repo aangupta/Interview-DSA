@@ -21,6 +21,48 @@ Output: [3, 4, 4, -1]
 Explanation: In the array, the next larger element to 1 is 3, 3 is 4, 2 is 4 and for 4 is -1, since it does not exist.
 
 */
+
+//Approach 1: Brute Force
+//TC - O(n^2) SC - (n) 
+class Solution {
+
+    public int[] nextLargerElement(int[] arr) {
+
+        int n = arr.length; // size of array
+
+        // To store the next greater elements
+        int[] ans = new int[n];
+        Arrays.fill(ans, -1);
+
+        for (int i = 0; i < n; i++) {
+
+            // Get the current element
+            int currEle = arr[i];
+
+            /*
+             * Nested loop to get the
+             * next greater element
+             */
+            for (int j = i + 1; j < n; j++) {
+
+                // If the next greater element is found
+                if (arr[j] > currEle) {
+
+                    // Store the next greater element
+                    ans[i] = arr[j];
+
+                    // Break from the loop
+                    break;
+                }
+            }
+        }
+
+        // Return the answer
+        return ans;
+    }
+}
+
+// TC -O(2n) SC - O(2n)
 class Solution {
     public int[] nextLargerElement(int[] arr) {
         int n = arr.length;
